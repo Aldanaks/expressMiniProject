@@ -10,9 +10,10 @@ const getAllBooks = async (req, res, next) => {
 };
 
 const getOneBook = async (req, res, next) => {
-  const id = req.params.id;
   try {
-    const book = await ById(id);
+    const id = req.params.id;
+
+    const book = await Book.findById(id);
     if (book) {
       return res.status(200).json(book);
     } else {
