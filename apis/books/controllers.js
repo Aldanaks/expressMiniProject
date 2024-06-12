@@ -61,7 +61,7 @@ const deleteOneBook = async (req, res, next) => {
     if (book) {
       return res.status(201).json(book);
     } else {
-      return res.status(404).json({ msg: "update book failed!" });
+      return res.status(404).json({ msg: "delete book failed!" });
     }
   } catch (error) {
     return next(error);
